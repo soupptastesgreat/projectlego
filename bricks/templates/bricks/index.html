@@ -1,0 +1,11 @@
+{% extends 'bricks/base.html' %}
+{% block thebricks_active %}active{% endblock %}
+{% block body %}
+
+<p style="font-size: 20px; padding: 20px 450px 10px; text-align: justify;">Ever since I was a kid, I loved playing with Legos. I liked to build everything from baseball parks to starships. A few months ago, I decided to take my passion for these little plastic toys to the next level and use them to help sharpen my programming skills. Lo and behold, this is the result! I entered all of my Legos into a MySQL database and decided to create this website to showcase my collection by brick type, color, and size. Thanks for visiting this website. I hope you enjoy Project Lego!</p>
+
+<a href="{% url 'bricks:brickcolor' %}"><h4>Color</h4></a>
+<a href="{% url 'bricks:bricksize' %}"><h4>Size</h4></a>
+<a href="{% url 'bricks:bricktype' %}"><h4>Type</h4></a>
+
+{% endblock %}

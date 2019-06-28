@@ -1,0 +1,55 @@
+{% extends 'bricks/base.html' %}
+{% block thebricks_active %}active{% endblock %}
+{% block body %}
+{% load static %}
+
+<div class="container">
+
+	<h1>Submit a brick here!</h1>
+
+	<div class="row">
+
+		<form id="brick-form" role="form" method="post">
+			
+			{% csrf_token %}
+			
+			<div class="row pt-3">
+				<h3>Brick type:</h3>
+			</div>
+
+			<div class="row pt-3">
+				{{ form.brick_type }}
+			</div>
+
+			<div class="row pt-3">
+				<h3>Brick size:</h3>
+			</div>
+
+			<div class="row pt-3">
+				{{ form.brick_size }}
+			</div>
+
+			<div class="row pt-3">
+
+				<h3>Brick color:</h3>
+			</div>
+
+			<div class="row pt-3">
+				<select>
+					{% for value, choice in form.fields.my_color.choices %}
+						<option value="">{{ choice }}</option>
+					{% endfor %}
+				</select>
+
+			</div>
+
+			<div class="row pt-3">
+				<input type="submit" value="Submit brick">
+			</div>
+				
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
