@@ -1,0 +1,268 @@
+{% extends 'bricks/base.html' %}
+{% block thebricks_active %}active{% endblock %}
+{% block body %}
+
+<p style="font-size: 20px; padding: 20px 450px 10px; text-align: justify;">Ever since I was a kid, I loved playing with Legos. I liked to build everything from baseball parks to starships. A few months ago, I decided to take my passion for these little plastic toys to the next level and use them to help sharpen my programming skills. Lo and behold, this is the result! I entered all of my Legos into a MySQL database and decided to create this website to showcase my collection by brick type, color, and size. Thanks for visiting this website. I hope you enjoy Project Lego!</p>
+
+<h1>Collection by brick color:</h1>
+<div id="color_container"></div>
+
+<h1>Collection by brick type:</h1>
+<div id="type_container" style="width: 800px; height: 500px;"></div>
+
+<script type="text/javascript">
+// Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawPieChart);
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawPieChart() {
+
+	var lego_b = {{ color_b|safe }};
+	var lego_by = {{ color_by|safe }};
+	var lego_bb = {{ color_bb|safe }};
+	var lego_bg = {{ color_bg|safe }};
+	var lego_bo = {{ color_bo|safe }};
+	var lego_bp = {{ color_bp|safe }};
+	var lego_br = {{ color_br|safe }};
+	var lego_brv = {{ color_brv|safe }};
+	var lego_bry = {{ color_by|safe }};
+	var lego_byg = {{ color_byg|safe }};
+	var lego_cy = {{ color_cy|safe }};
+	var lego_da = {{ color_da|safe }};
+	var lego_dg = {{ color_dg|safe }};
+	var lego_do = {{ color_do|safe }};
+	var lego_dsg = {{ color_dsg|safe }};
+	var lego_eb = {{ color_eb|safe }};
+	var lego_eg = {{ color_eg|safe }};
+	var lego_flo = {{ color_flo|safe }};
+	var lego_ln = {{ color_ln|safe }};
+	var lego_lp = {{ color_lp|safe }};
+	var lego_ma = {{ color_ma|safe }};
+	var lego_mla = {{ color_mla|safe }};
+	var lego_mli = {{ color_mli|safe }};
+	var lego_mn = {{ color_mn|safe }};
+	var lego_msg = {{ color_msg|safe }};
+	var lego_ndr = {{ color_ndr|safe }};
+	var lego_p = {{ color_p|safe }};
+	var lego_rb = {{ color_rb|safe }};
+	var lego_sb = {{ color_sb|safe }};
+	var lego_sy = {{ color_sy|safe }};
+	var lego_si = {{ color_si|safe }};
+	var lego_sm = {{ color_sm|safe }};
+	var lego_syg = {{ color_syg|safe }};
+	var lego_tm = {{ color_tm|safe }};
+	var lego_t = {{ color_t|safe }};
+	var lego_tb = {{ color_tb|safe }};
+	var lego_tbg = {{ color_tbg|safe }};
+	var lego_tbo = {{ color_tbo|safe }};
+	var lego_tg = {{ color_tg|safe }};
+	var lego_tlb = {{ color_tlb|safe }};
+	var lego_tmrv = {{ color_tmrv|safe }};
+	var lego_tr = {{ color_tr|safe }};
+	var lego_ty = {{ color_ty|safe }};
+	var lego_wg = {{ color_wg|safe }};
+	var lego_w = {{ color_w|safe }};
+
+	var b_color = parseInt(lego_b.length);
+	var by_color = parseInt(lego_by.length);
+	var bb_color = parseInt(lego_bb.length);
+	var bg_color = parseInt(lego_bg.length);
+	var bo_color = parseInt(lego_bo.length);
+	var bp_color = parseInt(lego_bp.length);
+	var br_color = parseInt(lego_br.length);
+	var brv_color = parseInt(lego_brv.length);
+	var bry_color = parseInt(lego_bry.length);
+	var byg_color = parseInt(lego_byg.length);
+	var cy_color = parseInt(lego_cy.length);
+	var da_color = parseInt(lego_da.length);
+	var dg_color = parseInt(lego_dg.length);
+	var do_color = parseInt(lego_do.length);
+	var dsg_color = parseInt(lego_dsg.length);
+	var eb_color = parseInt(lego_eb.length);
+	var eg_color = parseInt(lego_eg.length);
+	var flo_color = parseInt(lego_flo.length);
+	var ln_color = parseInt(lego_ln.length);
+	var lp_color = parseInt(lego_lp.length);
+	var ma_color = parseInt(lego_ma.length);
+	var mla_color = parseInt(lego_mla.length);
+	var mli_color = parseInt(lego_mli.length);
+	var mn_color = parseInt(lego_mn.length);
+	var msg_color = parseInt(lego_msg.length);
+	var ndr_color = parseInt(lego_ndr.length);
+	var p_color = parseInt(lego_p.length);
+	var rb_color = parseInt(lego_rb.length);
+	var sb_color = parseInt(lego_sb.length);
+	var sy_color = parseInt(lego_sy.length);
+	var si_color = parseInt(lego_si.length);
+	var sm_color = parseInt(lego_sm.length);
+	var syg_color = parseInt(lego_syg.length);
+	var tm_color = parseInt(lego_tm.length);
+	var t_color = parseInt(lego_t.length);
+	var tb_color = parseInt(lego_tb.length);
+	var tbg_color = parseInt(lego_tbg.length);
+	var tbo_color = parseInt(lego_tbo.length);
+	var tg_color = parseInt(lego_tg.length);
+	var tlb_color = parseInt(lego_tlb.length);
+	var tmrv_color = parseInt(lego_tmrv.length);
+	var tr_color = parseInt(lego_tr.length);
+	var ty_color = parseInt(lego_ty.length);
+	var wg_color = parseInt(lego_wg.length);
+	var w_color = parseInt(lego_w.length);
+
+  	// Create the data table.
+	var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Colors');
+      	data.addColumn('number', 'Slices');
+     	data.addRows([
+        	['Black', b_color],
+    	    ['Brick Yellow', by_color],
+    	    ['Bright Blue', bb_color],
+    	    ['Bright Green', bg_color],
+        	['Bright Orange', bo_color],
+        	['Bright Purple', bp_color],
+        	['Bright Red', br_color],
+        	['Bright Reddish Violet', brv_color],
+        	['Bright Yellow', bry_color],
+        	['Bright Yellowish Green', byg_color],
+        	['Cool Yellow', cy_color],
+        	['Dark Azure', da_color],
+        	['Dark Green', dg_color],
+        	['Dark Orange', do_color],
+        	['Dark Stone Grey', dsg_color],
+        	['Earth Blue', eb_color],
+        	['Earth Green', eg_color],
+        	['Flame Yellowish Orange', flo_color],
+        	['Light Nougat', ln_color],
+        	['Light Purple', lp_color],
+        	['Medium Azure', ma_color],
+        	['Medium Lavender', mla_color],
+        	['Medium Lilac', mli_color],
+        	['Medium Nougat', mn_color],
+        	['Medium Stone Grey', msg_color],
+        	['New Dark Red', ndr_color],
+        	['Pink', p_color],
+        	['Reddish Brown', rb_color],
+        	['Sand Blue', sb_color],
+        	['Sand Yellow', sy_color],
+        	['Silver Ink', si_color],
+        	['Silver Metallic', sm_color],
+        	['Spring Yellowish Green', syg_color],
+        	['Titanium Metallic', tm_color],
+        	['Transparent', t_color],
+        	['Transparent Blue', tb_color],
+        	['Transparent Bright Green', tbg_color],
+        	['Transparent Bright Orange', tbo_color],
+        	['Transparent Green', tg_color],
+        	['Transparent Light Blue', tlb_color],
+        	['Transparent Medium Reddish Violet', tmrv_color],
+        	['Transparent Red', tr_color],
+        	['Transparent Yellow', ty_color],
+        	['Warm Gold', wg_color],
+        	['White', w_color]
+      	]);
+
+  	// Set chart options
+	var options = {
+        'width': 1200,
+        'height': 1000,
+        colors: [
+        	'#000000',
+        	'#B0A06F',
+        	'#1E5AA8',
+        	'#58AB41',
+        	'#D67923',
+        	'#D3359D',
+        	'#B40000',
+        	'#901F76',
+        	'#FAC80A',
+        	'#A5CA18',
+        	'#FFEC6C',
+        	'#469BC3',
+        	'#00852B',
+        	'#91501C',
+        	'#646464',
+        	'#19325A',
+        	'#00451A',
+        	'#FCAC00',
+        	'#FFC995',
+        	'#FF9ECD',
+        	'#68C3E2',
+        	'#A06EB9',
+        	'#441A91',
+        	'#AA7D55',
+        	'#969696',
+        	'#720012',
+        	'#FFAFE4',
+        	'#5F3109',
+        	'#70819A',
+        	'#897D62',
+        	'#E5E5E5',
+        	'#8C8C8C',
+        	'#E2F99A',
+        	'#3E3C39',
+        	'#EEEEEE',
+        	'#77B7CC',
+        	'#AFD246',
+        	'#E18D0A',
+        	'#73B464',
+        	'#ADDDED',
+        	'#FD8ECF',
+        	'#B82700',
+        	'#FAF15D',
+        	'#AA7F2E',
+        	'#F4F4F4',
+        ]
+    };
+
+  	// Instantiate and draw our chart, passing in some options.
+	var chart = new google.visualization.PieChart(document.getElementById('color_container'));
+	chart.draw(data, options);
+
+}
+
+// Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages':['bar']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart() {
+
+  var lego_brick = {{ brick_type|safe }};
+  var lego_plate = {{ plate_type|safe }};
+  var lego_tile = {{ tile_type|safe }};
+  var lego_other = {{ other_type|safe }};
+
+  var brick_count = parseInt(lego_brick.length);
+  var plate_count = parseInt(lego_plate.length);
+  var tile_count = parseInt(lego_tile.length);
+  var other_count = parseInt(lego_other.length);
+
+  // Create the data table.
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Brick Types');
+  data.addColumn('number', 'Number of bricks');
+  data.addRows([
+    ['Bricks', brick_count],
+    ['Plates', plate_count],
+    ['Tiles', tile_count],
+    ['Others', other_count],
+  ]);
+
+  // Instantiate and draw our chart, passing in some options.
+  var chart = new google.charts.Bar(document.getElementById('type_container'));
+  chart.draw(data);
+}
+
+
+</script>
+
+{% endblock %}

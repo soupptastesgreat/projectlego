@@ -55,7 +55,7 @@ ROOT_URLCONF = 'projectlego.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['bricks/templates/bricks'],
+        'DIRS': ['static/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

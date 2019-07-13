@@ -18,7 +18,7 @@ class thebricks(models.Model):
 	dark_stone_grey = "dark stone grey"
 	earth_blue = "earth blue"
 	earth_green = "earth green"
-	flame_yellowish_green = "flame yellowish green"
+	flame_yellowish_orange = "flame yellowish orange"
 	light_nougat = "light nougat"
 	light_purple = "light purple"
 	medium_azure = "medium azure"
@@ -55,6 +55,8 @@ class thebricks(models.Model):
 		(bright_purple, "bright purple"),
 		(bright_red, "bright red"),
 		(bright_reddish_violet, "bright reddish violet"),
+		(bright_yellow, "bright yellow"),
+		(bright_yellowish_green, "bright yellowish green"),
 		(cool_yellow, "cool yellow"),
 		(dark_azure, "dark azure"),
 		(dark_green, "dark green"),
@@ -62,7 +64,7 @@ class thebricks(models.Model):
 		(dark_stone_grey, "dark stone grey"),
 		(earth_blue, "earth blue"),
 		(earth_green, "earth green"),
-		(flame_yellowish_green, "flame yellowish green"),
+		(flame_yellowish_orange, "flame yellowish orange"),
 		(light_nougat, "light nougat"),
 		(light_purple, "light purple"),
 		(medium_azure, "medium azure"),
