@@ -45,7 +45,7 @@ class Index(ListView):
 		brick_color32 = self.get_queryset().filter(my_color__contains='silver metallic')
 		brick_color33 = self.get_queryset().filter(my_color__contains='spring yellowish green')
 		brick_color34 = self.get_queryset().filter(my_color__contains='titanium metallic')
-		brick_color35 = self.get_queryset().filter(my_color__contains='transparent')
+		brick_color35 = self.get_queryset().filter(my_color__exact='transparent')
 		brick_color36 = self.get_queryset().filter(my_color__contains='transparent blue')
 		brick_color37 = self.get_queryset().filter(my_color__contains='transparent bright green')
 		brick_color38 = self.get_queryset().filter(my_color__contains='transparent bright orange')
