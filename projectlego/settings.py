@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'projectlego.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dfcqd2hmlmpr9q',
         'USER': 'rcmhhtxhhaosml',
         'PASSWORD': 'adcd82fe81470c81498932cabf8bbe656dcff15d5145ebbddeb7e435e095cf43',
