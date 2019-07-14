@@ -1,0 +1,1 @@
+web: gunicorn projectlego.wsgi --log-file -
