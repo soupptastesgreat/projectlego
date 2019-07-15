@@ -12,7 +12,7 @@ class Index(ListView):
 
 	def get(self, request, *args, **kwargs):
 		brick_color1 = self.get_queryset().filter(my_color__contains='black')
-		brick_color2 = self.get_queryset().filter(my_color__contains='bright yellow')
+		brick_color2 = self.get_queryset().filter(my_color__contains='brick yellow')
 		brick_color3 = self.get_queryset().filter(my_color__contains='bright blue')
 		brick_color4 = self.get_queryset().filter(my_color__contains='bright green')
 		brick_color5 = self.get_queryset().filter(my_color__contains='bright orange')
