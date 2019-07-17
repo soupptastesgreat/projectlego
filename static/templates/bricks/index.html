@@ -2,13 +2,49 @@
 {% block thebricks_active %}active{% endblock %}
 {% block body %}
 
-<p style="font-size: 20px; padding: 20px 450px 10px; text-align: justify;">Ever since I was a kid, I loved playing with Legos. I liked to build everything from baseball parks to starships. A few months ago, I decided to take my passion for these little plastic toys to the next level and use them to help sharpen my programming skills. Lo and behold, this is the result! I entered all of my Legos into a MySQL database and decided to create this website to showcase my collection by brick type, color, and size. Thanks for visiting this website. I hope you enjoy Project Lego!</p>
+<p style="font-size: 20px; padding: 20px 450px 10px; text-align: justify;">Ever since I was a kid, I loved playing with Legos. I liked to build everything from baseball parks to starships. A few months ago, I decided to take my passion for these little plastic toys to the next level and use them to help sharpen my programming skills. Lo and behold, this is the result! I'm currently entering all of my Lego bricks into a Django database (which is connected to PostgreSQL), and the charts below showcase my collection by brick type and color. It's still a work-in-progress as there's many bricks that still need to be added. (Also, I'm still working on the front-end of this page.) But updates should be made regularly and each chart will update whenever a new brick has been added. If you have any questions or comments, please email me at <a href="mailto:hello@soupp.tv">hello@soupp.tv</a>. Thanks so much for visiting. I hope you enjoy Project Lego!</p>
 
 <h1>Collection by brick color:</h1>
 <div id="color_container"></div>
 
 <h1>Collection by brick type:</h1>
 <div id="type_container" style="width: 800px; height: 500px;"></div>
+
+<h1>This collection is comprised of the following Lego sets:</h1>
+
+<img src="https://images.brickset.com/sets/large/75040-1.jpg?201311131110" width="615.75" height="309.75">
+<h4>Set #75040-1: General Grievous' Wheel Bike</h4>
+<p>Released in: 2014</p>
+<p>Theme: Star Wars</p>
+<p>Subtheme: Episode III</p>
+<p>Pieces: 261</p>
+<p>Minifigures: 2</p>
+
+<img src="https://images.brickset.com/sets/large/7965-1.jpg?201102131044" width="615.75" height="389.25"> 
+<h4>Set #7965-1: Millennium Falcon</h4>
+<p>Released in: 2011</p>
+<p>Theme: Star Wars</p>
+<p>Subtheme: Episode IV</p>
+<p>Pieces: 1254</p>
+<p>Minifigures: 6</p>
+
+<img src="https://images.brickset.com/sets/large/10698-1.jpg?201412240914" width="615.75" height="320.25">
+<h4>Set #10698-1: Large Creative Brick Box</h4>
+<p>Released in: 2015</p>
+<p>Theme: Classic</p>
+<p>Subtheme: None</p>
+<p>Pieces: 790</p>
+<p>Minifigures: 0</p>
+
+<img src="https://images.brickset.com/sets/large/10693-1.jpg?201411050235" width="615.75" height="302.25">
+<h4>Set #10693-1: Creative Supplement</h4>
+<p>Released in: 2015</p>
+<p>Theme: Classic</p>
+<p>Subtheme: None</p>
+<p>Pieces: 303</p>
+<p>Minifigures: 0</p>
+
+<h4>Special thanks to <a href="https://brickset.com/" target="_blank">brickset.com</a> for providing the information about the bricks and <a href="https://developers.google.com/chart/" target="_blank">Goole charts</a> for providing the charts!</h4>
 
 <script type="text/javascript">
 // Load the Visualization API and the corechart package.
