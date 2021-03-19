@@ -18,7 +18,7 @@ django-crispy-forms==1.7.2
 django-disqus==0.5
 django-embed-video==1.1.2
 django-vote==2.1.7
-djangorestframework==3.6.4
+djangorestframework==3.11.2
 DjangoSEO==1.0
 flake8==3.5.0
 gunicorn==19.7.1
